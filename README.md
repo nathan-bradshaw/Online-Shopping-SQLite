@@ -1,14 +1,16 @@
+## Videos
+
 WebServer Video: https://youtu.be/HZeQwTzI6MI
 
 MicroServices Video: https://youtu.be/0KyBL2Q7XZ8
 
-    Introduction
+## Introduction
 
 This is the documentation for the design, implementation, and testing of an online shopping system. The system is designed using a layered architecture approach, with separate layers for the presentation, application, and data access logic. The presentation layer is implemented as a RESTful web server, while the application layer is implemented as microservices that can be accessed by clients via socket programming. The data access layer is implemented using a database management system.
 
 This documentation provides a comprehensive guide to the design and implementation of each component of the system, as well as instructions on how to test each component individually.
 
-    Design & Implementation
+## Design & Implementation
 
 - Server Component:
 
@@ -27,9 +29,7 @@ For example, if a GET request is made to the /users/<username> endpoint, the web
 
 The web server component can be designed to follow the Model-View-Controller (MVC) pattern, where the model represents the data layer (database), the view represents the user interface (HTML pages), and the controller acts as an intermediary between the two, handling the logic of processing user requests and generating responses.
 
----
-
-- Microservices
+## Microservices
 
 The microservices are implemented as independent Java programs that communicate with the server component via REST APIs. Each microservice is responsible for one specific task.
 
@@ -45,13 +45,11 @@ These microservices are tested with individual clients that connect via socket t
 
 The microservices can be designed to follow the Single Responsibility Principle (SRP), where each microservice is responsible for performing a specific functionality, and is not concerned with other functionalities. This allows for better scalability and maintainability of the system.
 
----
-- Database
+## Database
 
 To store user, product, and order information, you can use a relational database such as SQLite. You can create separate tables for users, products, orders, and other relevant information. The microservices can then communicate with the database to retrieve or update data.
 
----
-- Architecture
+## Architecture
 
 The layered architecture for the online shopping system is a way of organizing the system's components into a set of layers that are responsible for different aspects of the system's functionality. This architecture separates the system's concerns into distinct layers, each with its own set of responsibilities and interfaces.
 
@@ -63,8 +61,7 @@ Application Layer: This layer sits between the presentation layer and the data l
 
 Data Layer: This is the bottommost layer and is responsible for managing the system's data. It includes the database and any related components, such as database access objects (DAOs).
 
----
-- Service Registry:
+## Service Registry:
 
 The service registry is a central component that keeps track of the available microservices and their network locations. Clients can query the service registry to discover the location of the microservice they need to use.
 The service registry is a key component of a microservices architecture. It serves as a central directory of available services, allowing clients to discover the location of the services they need.
@@ -75,8 +72,7 @@ When a client needs to use a particular microservice, it queries the service reg
 
 The service registry can also be used to implement load balancing and failover mechanisms. By keeping track of multiple instances of the same service, the registry can direct client requests to the most available or reliable instance. If a service instance goes down, the service registry can detect the failure and redirect requests to another available instance.
 
----
-- Clients:
+## Clients:
 
 The clients are implemented using Java socket programming. Each client connects to the service registry to discover the location of the required microservice. The client then establishes a socket connection to the microservice and sends the necessary input parameters to perform the required functionality.
 
@@ -84,7 +80,7 @@ For example, a client that wants to get the product information for a specific p
 
 Clients can also handle error and exception cases by checking the response from the microservice and taking appropriate actions. For example, if the ProductService microservice returns an error message indicating that the product ID is invalid, the client can display an error message to the user.
 
-    Testing
+## Testing
 
 Each microservice is tested individually using a test client. The test client is a program that connects to the service registry to discover the location of the microservice and then connects to the microservice to perform the required functionality. The test client sends the necessary parameters and verifies that the result is correct and within the expected range. This testing process can be automated using testing frameworks such as JUnit or TestNG.
 
@@ -92,7 +88,7 @@ The web server component is tested using a web browser or a tool such as Postman
 
 To test the online shopping system, you can use a combination of unit tests, integration tests, and end-to-end(system) tests. Unit tests can be used to test individual functions of each microservice, while integration tests can be used to test the interaction between microservices. End-to-end tests can be used to test the entire system, including the server component and microservices, to ensure that they work together correctly. 
 
-    Conclusion
+## Conclusion
 
 The system is tested using a combination of unit tests and integration tests. The previous project only had a GUI, server, and database. The GUI allowed the user to browse products, view their details, add them to the cart, and place an order. The server provided a RESTful API that allowed the GUI to interact with the database and retrieve product information, user information, and order information.
 
